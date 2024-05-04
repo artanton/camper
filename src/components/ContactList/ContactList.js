@@ -1,17 +1,17 @@
 import { useSelector } from 'react-redux';
-import { ContactItem } from '../contactItem/ContactItem';
+import {CamperItem} from '../contactItem/ContactItem';
 import { PhoneNoList } from './ContactListStyled';
 import { selectSearchedContacts } from 'reduxFiles/cont/selectors';
 
-export const ContactList = () => {
-  const actualContacts = useSelector(selectSearchedContacts);
-
+export const CamperList = () => {
+  const actualCampers = useSelector(selectSearchedContacts);
+  
   return (
     <PhoneNoList>
-      {actualContacts.map(contact => {
+      {actualCampers.map(camper => {
         return (
-          <li key={contact.id}>
-            <ContactItem contact={contact} />
+          <li key={camper.id}>
+            <CamperItem camper={camper} />
           </li>
         );
       })}

@@ -1,8 +1,10 @@
-import { ContactForm } from 'components/ContactForm/ContactForm';
+import { Helmet } from 'react-helmet';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+
 import { GlobalStyle } from 'components/GlobalStyle';
 import { ContactList } from 'components/ContactList/ContactList';
-import { Filter } from 'components/Filter/Filter';
-import { useSelector, useDispatch } from 'react-redux';
 import {
   selectContact,
   selectError,
@@ -10,16 +12,13 @@ import {
   selectSearchedContacts,
 
 } from 'reduxFiles/cont/selectors';
-import { useEffect } from 'react';
 import { fetchContacts } from 'reduxFiles/cont/operators';
-import { Helmet } from 'react-helmet';
 import {
   ContactsContainer,
   DataContainer,
   DataFrame,
-  Header,
   InputContainer,
-} from './YourContactStyled';
+} from './FavoriteStyled';
 
 export default function Contacts() {
   const actualContacts = useSelector(selectSearchedContacts);
@@ -33,16 +32,7 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 20,
-        color: '#010101',
-      }}
-    >
+    <div>
       <div>
         <Helmet>
           <title>Your contacts</title>
@@ -53,24 +43,22 @@ export default function Contacts() {
             marginBottom: 20,
           }}
         >
-          Phonebook
+          Phoneboo
         </h1>
         <ContactsContainer>
           <InputContainer>
-          <Header>Add Contact</Header>
-            <ContactForm />
+         
 
             {isLoading && !error && <b>Request in progress...</b>}
 
             {allContacts.length > 0 && (
               <div>
-                <Header>Find contacts by name</Header>
-                <Filter />
+                
               </div>
             )}
           </InputContainer>
           <DataContainer>
-            <Header>Contacts</Header>
+           
             {actualContacts.length > 0 && (
               <DataFrame>
                 <ContactList />

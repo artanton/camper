@@ -1,6 +1,11 @@
 export const theme = {
+  font:{
+    mainFont:'Inter',
+   
+  },
   colors: {
-    darkGray: '#dbdfdf',
+    hText: '#101828',
+    plainText: '#475467',
     lightGray: '#f3f5f5',
     borderGray: '#3e3f3f',
   },

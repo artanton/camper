@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import { LoginForm } from 'components/LogForm/LogForm';
+
 
 export default function Login() {
   return (
@@ -7,7 +7,8 @@ export default function Login() {
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <LoginForm />
+      <h1>Catalog</h1>
+      
     </div>
   );
 }
