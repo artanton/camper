@@ -4,15 +4,15 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 import { GlobalStyle } from 'components/GlobalStyle';
-import { ContactList } from 'components/ContactList/ContactList';
+import { CamperList } from 'components/ContactList/ContactList';
 import {
   selectContact,
   selectError,
   selectIsLoading,
-  selectSearchedContacts,
+  // selectSearchedContacts,
 
 } from 'reduxFiles/cont/selectors';
-import { fetchContacts } from 'reduxFiles/cont/operators';
+import { fetchData } from 'reduxFiles/cont/operators';
 import {
   ContactsContainer,
   DataContainer,
@@ -20,15 +20,15 @@ import {
   InputContainer,
 } from './FavoriteStyled';
 
-export default function Contacts() {
-  const actualContacts = useSelector(selectSearchedContacts);
-  const allContacts = useSelector(selectContact);
+export default function Campers() {
+ 
+  const allCampers = useSelector(selectContact);
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(fetchData());
   }, [dispatch]);
 
   return (
@@ -51,17 +51,13 @@ export default function Contacts() {
 
             {isLoading && !error && <b>Request in progress...</b>}
 
-            {allContacts.length > 0 && (
-              <div>
-                
-              </div>
-            )}
+            
           </InputContainer>
           <DataContainer>
            
-            {actualContacts.length > 0 && (
+            { allCampers.length > 0 && (
               <DataFrame>
-                <ContactList />
+                <CamperList />
               </DataFrame>
             )}
           </DataContainer>
