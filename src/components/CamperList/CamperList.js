@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
-import {CamperItem} from '../contactItem/ContactItem';
+import {CamperItem} from '../camperItem/CampertItem';
 
-import { selectContact } from 'reduxFiles/cont/selectors';
+import { selectCamper } from 'reduxFiles/camper/selectors';
 
 export const CamperList = () => {
-  const campers = useSelector(selectContact);
+  const campers = useSelector(selectCamper);
   
   return (
     <ul>

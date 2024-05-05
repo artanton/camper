@@ -1,5 +1,5 @@
 import {configureStore } from '@reduxjs/toolkit';
-import { campersReducer } from './cont/ContactsSlice';
+import { campersReducer } from './camper/CamperSlice';
 // import { filterReducer } from './cont/FilterSlice';
 // import {
 //   persistStore,
@@ -43,7 +43,7 @@ import { campersReducer } from './cont/ContactsSlice';
 
 export const store = configureStore({
   reducer: {
-    cont: campersReducer,
+    camp: campersReducer,
     // filt: filterReducer,
   },
   

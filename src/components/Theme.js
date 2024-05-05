@@ -3,27 +3,39 @@ export const theme = {
     mainFont:'Inter',
    
   },
+fontWeight:{
+small: 400,
+medium: 500,
+big: 600,
+},
+
+fontSize:{
+  small: '16px',
+  medium: '20px',
+  big: '24px',
+  },
+
   colors: {
     hText: '#101828',
     plainText: '#475467',
     lightGray: '#f3f5f5',
-    borderGray: '#3e3f3f',
+    borderGray: '#10182833',
   },
 
   borderRad: {
-    norm: '12px',
-    small: '4px',
+    medium: '20px',
+    small: '10px',
   },
 
   padding: {
-    big: '20px',
-    norm: '8px',
+    big: '64px',
+    medium:'24px',
     small: '4px',
   },
 
   gap: {
-    big: '20px',
-    norm: '8px',
-    small: '4px',
+    big: '32px',
+    medium: '24px',
+    small: '10px',
   },
 };

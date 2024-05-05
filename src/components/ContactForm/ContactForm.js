@@ -8,9 +8,9 @@ import {
   FormStyled,
 } from './ContactFormStyled';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'reduxFiles/cont/operators';
+import { addContact } from 'reduxFiles/camper/operators';
 import Notiflix from 'notiflix';
-import { selectContact } from 'reduxFiles/cont/selectors';
+import { selectCamper } from 'reduxFiles/camper/selectors';
 
 const contactSchema = Yup.object().shape({
   name: Yup.string()
@@ -27,7 +27,7 @@ const contactSchema = Yup.object().shape({
 
 export const ContactForm = () => {
   const dispatchContact = useDispatch();
-  const contacts = useSelector(selectContact);
+  const contacts = useSelector(selectCamper);
 
   const onAdd = (newContact, actions) => {
     const contactExist = contacts.some(

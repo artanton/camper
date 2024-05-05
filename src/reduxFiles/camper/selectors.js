@@ -1,12 +1,12 @@
 // import { createSelector } from '@reduxjs/toolkit';
 
-export const selectContact = state => state.cont.campers;
+export const selectCamper = state => state.camp.campers;
 
 // export const selectFilter = state => state.filt.filter;
 
-export const selectIsLoading = state => state.cont.isLoading;
+export const selectIsLoading = state => state.camp.isLoading;
 
-export const selectError = state => state.cont.error;
+export const selectError = state => state.camp.error;
 
 // export const selectSearchedContacts = createSelector(
 //   [selectContact, selectFilter],
