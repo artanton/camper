@@ -5,9 +5,10 @@ import { App } from 'components/App';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'components/Theme';
 import { Provider } from 'react-redux';
-import { persistor, store } from './reduxFiles/store';
+// import { persistor, store } from './reduxFiles/store';
+import {store } from './reduxFiles/store';
 import { BrowserRouter } from 'react-router-dom';
-import { PersistGate } from 'redux-persist/integration/react';
+// import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
