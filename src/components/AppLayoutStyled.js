@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 
 export const Container = styled.div`
-  max-width: 960px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 8px ${p => p.theme.padding.big};
 `;
 export const Loader = styled.div`
    display: flex;

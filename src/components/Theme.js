@@ -10,16 +10,19 @@ big: 600,
 },
 
 fontSize:{
-  small: '16px',
-  medium: '20px',
   big: '24px',
+  medium: '20px',
+  small: '16px',
   },
 
   colors: {
     hText: '#101828',
     plainText: '#475467',
-    lightGray: '#f3f5f5',
+    lightGray: '#F2F4F7',
     borderGray: '#10182833',
+    actionBtnText:'#FFFFFF',
+
+    actionBtn: '#E44848',
   },
 
   borderRad: {
@@ -34,8 +37,9 @@ fontSize:{
   },
 
   gap: {
+    biggest: '164px',
     big: '32px',
     medium: '24px',
-    small: '10px',
+    small: '8px',
   },
 };

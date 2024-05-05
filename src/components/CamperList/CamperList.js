@@ -2,12 +2,13 @@ import { useSelector } from 'react-redux';
 import {CamperItem} from '../camperItem/CampertItem';
 
 import { selectCamper } from 'reduxFiles/camper/selectors';
+import { CamperListStyle } from './CamperListStyled';
 
 export const CamperList = () => {
   const campers = useSelector(selectCamper);
   
   return (
-    <ul>
+    <CamperListStyle>
       {campers.map(camper => {
         return (
           <li key={camper.id}>
@@ -15,6 +16,6 @@ export const CamperList = () => {
           </li>
         );
       })}
-    </ul>
+    </CamperListStyle>
   );
 };

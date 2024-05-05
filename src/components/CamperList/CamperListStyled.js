@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PhoneNoList = styled.ul`
+export const CamperListStyle = styled.ul`
   display: flex;
   flex-direction: column;
 

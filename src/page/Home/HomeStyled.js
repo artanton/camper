@@ -2,17 +2,18 @@ import vanForHomePage from '../../media/background/camper.jpg';
 import styled from 'styled-components';
 
 export const Container = styled.div`
+margin: 0 auto;
   min-height: calc(100vh - 50px);
-  max-width: 100vh;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: linear-gradient(
       to right,
-      rgba(255, 255, 255, 1),
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 1)
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.3)
     ),
     url(${vanForHomePage});
   background-size: cover;

@@ -11,10 +11,14 @@ import {
   // selectSearchedContacts,
 } from 'reduxFiles/camper/selectors';
 import { fetchData } from 'reduxFiles/camper/operators';
+import { CatalogContainer, CatalogHead, FilterContainer } from './CatalogStyled';
+import { Loader } from 'components/AppLayoutStyled';
+import { Hourglass } from 'react-loader-spinner';
+import { Filters } from 'components/Filters/Filters';
 
 export default function Campers() {
-  const allCampers = useSelector(selectCamper);
   const dispatch = useDispatch();
+  const allCampers = useSelector(selectCamper);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
@@ -26,23 +30,38 @@ export default function Campers() {
     <div>
       <div>
         <Helmet>
-          <title>Camper catalog</title>
+          <title>Campers Catalog: Rate and Reviews</title>
         </Helmet>
-        <h1
-          style={{
-            textAlign: ' center',
-            marginBottom: 20,
-          }}
-        >Catalog</h1>
+        <CatalogHead>Camper catalog</CatalogHead>
         <div>
-          <div>{isLoading && !error && <b>Request in progress...</b>}</div>
-          <div>
+          <>
+            {isLoading && !error && (
+              <Loader>
+                <Hourglass
+                  visible={true}
+                  height="80"
+                  width="80"
+                  ariaLabel="hourglass-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  colors={['#3d3d3d', 'red']}
+                />
+              </Loader>
+            )}
+          </>
+          
+
+          <CatalogContainer>
+            <FilterContainer>
+            <Filters />
+            </FilterContainer>
+
             {allCampers.length > 0 && (
               <div>
                 <CamperList />
               </div>
             )}
-          </div>
+          </CatalogContainer>
         </div>
       </div>
       <GlobalStyle />

@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import notFoundPic from '../../media/pictures/PhotoNotFound.png';
 import { getCamper } from 'reduxFiles/camper/operators';
 import { FiX } from 'react-icons/fi';
-import { CamperCard, CamperCardInfo, CamperHeading, Poster } from './ContactItemStyled';
+import { CamperButton, CamperButtons, CamperCard, CamperCardInfo, CamperDescription, CamperHeading, CamperRate, Poster, ShowMoreButton } from './ContactItemStyled';
 
 export const CamperItem = ({ camper }) => {
   const {
@@ -16,9 +16,12 @@ export const CamperItem = ({ camper }) => {
     adults,
     engine,
     transmission,
-    kitchen,
-    beds,
-    AC,
+    reviews,
+    details: {
+      kitchen,
+      beds,
+      airConditioner
+    }
   } = camper;
 
   const dispatch = useDispatch();
@@ -35,24 +38,56 @@ export const CamperItem = ({ camper }) => {
         />
 
         <CamperCardInfo>
-        <CamperHeading>
+          <div>
+          <CamperHeading>
         <span>{name}</span>
          <span>€{price}</span>
       </CamperHeading>
+      <CamperRate>
+        <span>{rating}({reviews.length} Reviews)</span>
+        <span>{location}</span>
+      </CamperRate>
 
-      <p>
+          </div>
+       
+
+      <CamperDescription>
         {description}
-      </p>
+      </CamperDescription>
 
-      <div>
-        
-      </div>
+      <CamperButtons>
+      <span>
+        { adults && (<CamperButton>{adults} adults</CamperButton>)}
+      </span>
 
-      <buton onClick={() => dispatch(getCamper(camper.id))}>
+      <span>
+        { transmission && (<CamperButton>{transmission.charAt(0).toUpperCase() + transmission.slice(1)}</CamperButton>)}
+      </span>
+
+      <span>
+        { engine && (<CamperButton> {engine.charAt(0).toUpperCase() + engine.slice(1)} </CamperButton>)}
+      </span>
+
+      <span>
+        { kitchen &&(<CamperButton>Kitchen </CamperButton>)}
+      </span>
+
+      <span>
+        {beds &&(<CamperButton>{beds} beds </CamperButton>)}
+      </span>
+
+      <span>
+        {airConditioner&& (<CamperButton> AC </CamperButton>)}
+      </span>
+     
+
+      </CamperButtons>
+
+      <ShowMoreButton onClick={() => dispatch(getCamper(camper.id))}>
         <span>
          Show more
         </span>
-      </buton>
+      </ShowMoreButton>
 
         </CamperCardInfo>
 
