@@ -93,12 +93,13 @@ export const ShowMoreButton = styled.button`
   font-weight: ${p => p.theme.fontWeight.medium};
   font-size: ${p => p.theme.fontSize.small};
   background-color:  ${p => p.theme.colors.actionBtn};
-   /* display: inline-block; */
+
    max-width: 166px;                    
   
   line-height: 1.5;
   
 `;
+
 
 
 
