@@ -1,12 +1,12 @@
 import { useDispatch } from 'react-redux';
 import notFoundPic from '../../media/pictures/PhotoNotFound.png';
 import { getCamper } from 'reduxFiles/camper/operators';
-import { FiX } from 'react-icons/fi';
-import { CamperButton, CamperButtons, CamperCard, CamperCardInfo, CamperDescription, CamperHeading, CamperRate, Poster, ShowMoreButton } from './ContactItemStyled';
+// import { FiX } from 'react-icons/fi';
+import { CamperButton, CamperButtons, CamperCard, CamperCardInfo, CamperDescription, CamperHeading, CamperRate, Poster, ShowMoreButton } from './CamperItemStyled';
 
 export const CamperItem = ({ camper }) => {
   const {
-    _id,
+   
     gallery,
     name,
     price,
