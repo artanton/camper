@@ -1,3 +1,4 @@
+import symbolDefs from '../../media/pictures/icons/symbol-defs.svg';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { FilterStyled } from './FiltersStyled';
 // import { filtering } from 'reduxFiles/camper/FilterSlice';
@@ -28,22 +29,72 @@ export const Filters = () => {
           <div>
             <div>
               <h4>Vehicle equipment</h4>
-              <div>
-                <button>AC</button>
-                <button>Atomatic</button>
-                <button>Kitchen</button>
-                <button>TV</button>
-                <button>Shower/WC</button>
-              </div>
+              <ul>
+                <li>
+                  <button>
+                    <svg width="32" height="32">
+                      <use href={`${symbolDefs}#AC`}></use>
+                    </svg>
+                    <span>AC</span></button>
+                </li>
+                <li>
+                  <button>
+                    <svg width="32" height="32">
+                      <use href={`${symbolDefs}#icon-Transmission`}></use>
+                    </svg>
+                    <span>Atomatic</span></button>
+                </li>
+                <li>
+                  <button>
+                    <svg width="32" height="32">
+                      <use href={`${symbolDefs}#icon-Kitchen`}></use>
+                    </svg>
+                    <span>Kitchen</span></button>
+                </li>
+                <li>
+                  <button>
+                    <svg width="32" height="32">
+                      <use href={`${symbolDefs}#icon-TV`}></use>
+                    </svg>
+                    <span>TV</span></button>
+                </li>
+                <li>
+                  <button>
+                    <svg width="32" height="32">
+                      <use href={`${symbolDefs}#icon-Shower`}></use>
+                    </svg>
+                    <span>Shower/WC</span></button>
+                </li>
+              </ul>
             </div>
             <div>
               <h4>Vehicle type</h4>
-              <div>
-                <button>Van</button>
-                <button>Fully Integrated</button>
-                <button>Alcove</button>
-                
-              </div>
+              <ul>
+                <li>
+                  <button>
+                    <svg width="40" height="28">
+                      <use href={`${symbolDefs}#icon-Van`}></use>
+                    </svg>
+                    <span>Van</span>
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <svg width="40" height="28">
+                      <use href={`${symbolDefs}#icon-FullyInegrated`}></use>
+                    </svg>
+                    <span>Fully Integrated</span>
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <svg width="40" height="28">
+                      <use href={`${symbolDefs}#icon-Alcove`}></use>
+                    </svg>
+                    <span>Alcove</span>
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

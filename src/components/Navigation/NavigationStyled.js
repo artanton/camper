@@ -4,12 +4,14 @@ import { NavLink } from 'react-router-dom';
 export const MenuLink = styled(NavLink)`
  display: inline-block;
   text-decoration: none;
+  font-family: ${p => p.theme.font.mainFont};
+
   padding: 12px;
   font-weight: 700;
-  color: black;
+  color: ${p => p.theme.colors.hText};
 
   &.active {
-    color: red;
+    color:  ${p => p.theme.colors.actionBtn};
   }
   
 `;

@@ -1,8 +1,12 @@
 import { useDispatch } from 'react-redux';
 import notFoundPic from '../../media/pictures/PhotoNotFound.png';
 import { getCamper } from 'reduxFiles/camper/operators';
+import symbolDefs from '../../media/pictures/icons/symbol-defs.svg';
 
 import {
+  Gearbox,
+  BedSolid,
+  Kitchen2,
   CamperButton,
   CamperButtons,
   CamperCard,
@@ -49,8 +53,7 @@ export const CamperItem = ({ camper }) => {
           <CamperHeading>
             <div>{name}</div>
             <div>
-              €{price}{' '}
-              <FavoriteButton itemId={_Id}/>
+              €{price} <FavoriteButton itemId={_Id} />
             </div>
           </CamperHeading>
           <CamperRate>
@@ -64,30 +67,67 @@ export const CamperItem = ({ camper }) => {
         <CamperDescription>{description}</CamperDescription>
 
         <CamperButtons>
-          <span>{adults && <CamperButton>{adults} adults</CamperButton>}</span>
+          <li>
+            {adults && (
+              <CamperButton>
+                <svg width="20" height="20">
+                  <use href={`${symbolDefs}#icon-Adults`}></use>
+                </svg>
+                <span>{adults} adults</span>
+              </CamperButton>
+            )}
+          </li>
 
-          <span>
+          <li>
             {transmission && (
               <CamperButton>
-                {transmission.charAt(0).toUpperCase() + transmission.slice(1)}
+                <Gearbox />
+                <span>
+                  {transmission.charAt(0).toUpperCase() + transmission.slice(1)}
+                </span>
               </CamperButton>
             )}
-          </span>
+          </li>
 
-          <span>
+          <li>
             {engine && (
               <CamperButton>
-                {' '}
-                {engine.charAt(0).toUpperCase() + engine.slice(1)}{' '}
+                <svg width="20" height="20">
+                  <use href={`${symbolDefs}#icon-Petrol`}></use>
+                </svg>
+                <span>{engine.charAt(0).toUpperCase() + engine.slice(1)}</span>
               </CamperButton>
             )}
-          </span>
+          </li>
 
-          <span>{kitchen && <CamperButton>Kitchen </CamperButton>}</span>
+          <li>
+            {kitchen && (
+              <CamperButton>
+                <Kitchen2 />
+                <span>Kitchen</span>
+              </CamperButton>
+            )}
+          </li>
 
-          <span>{beds && <CamperButton>{beds} beds </CamperButton>}</span>
+          <li>
+            {beds && (
+              <CamperButton>
+                <BedSolid />
+                <span>{beds} beds</span>
+              </CamperButton>
+            )}
+          </li>
 
-          <span>{airConditioner && <CamperButton> AC </CamperButton>}</span>
+          <li>
+            {airConditioner && (
+              <CamperButton>
+                <svg width="23" height="16">
+                  <use href={`${symbolDefs}#AC`}></use>
+                </svg>
+                <span>AC</span>
+              </CamperButton>
+            )}
+          </li>
         </CamperButtons>
 
         <ShowMoreButton onClick={() => dispatch(getCamper(camper.id))}>
