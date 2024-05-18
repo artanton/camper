@@ -1,4 +1,12 @@
+import {
+  Gearbox,
+
+  Kitchen2,
+  Tv,
+} from '../../media/pictures/ReactIcons.js';
+
 import symbolDefs from '../../media/pictures/icons/symbol-defs.svg';
+
 // import { useDispatch, useSelector } from 'react-redux';
 // import { FilterStyled } from './FiltersStyled';
 // import { filtering } from 'reduxFiles/camper/FilterSlice';
@@ -32,30 +40,25 @@ export const Filters = () => {
               <ul>
                 <li>
                   <button>
-                    <svg width="32" height="32">
+                    <svg width="34" height="20">
                       <use href={`${symbolDefs}#AC`}></use>
                     </svg>
-                    <span>AC</span></button>
+                    <span>AC</span>
+                    </button>
                 </li>
                 <li>
                   <button>
-                    <svg width="32" height="32">
-                      <use href={`${symbolDefs}#icon-Transmission`}></use>
-                    </svg>
+                   <  Gearbox width ="32px" height ="32px"/>
                     <span>Atomatic</span></button>
                 </li>
                 <li>
                   <button>
-                    <svg width="32" height="32">
-                      <use href={`${symbolDefs}#icon-Kitchen`}></use>
-                    </svg>
+                  <Kitchen2 width ="32px" height ="32px"/>
                     <span>Kitchen</span></button>
                 </li>
                 <li>
                   <button>
-                    <svg width="32" height="32">
-                      <use href={`${symbolDefs}#icon-TV`}></use>
-                    </svg>
+                    <Tv width ="32px" height ="32px"/>
                     <span>TV</span></button>
                 </li>
                 <li>

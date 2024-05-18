@@ -7,6 +7,9 @@ import {
   Gearbox,
   BedSolid,
   Kitchen2,
+} from '../../media/pictures/ReactIcons.js';
+
+import {
   CamperButton,
   CamperButtons,
   CamperCard,

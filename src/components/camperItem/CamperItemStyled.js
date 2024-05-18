@@ -1,28 +1,4 @@
 import styled from 'styled-components';
-import { TbAutomaticGearbox } from 'react-icons/tb';
-import { IoBedOutline } from 'react-icons/io5';
-import { TbToolsKitchen2 } from 'react-icons/tb';
-
-export const Gearbox = styled(TbAutomaticGearbox)`
-  color: ${p => p.theme.colors.hText};
-  width: 20px;
-  height: 20px;
-  vertical-align: baseline;
-`;
-
-export const BedSolid = styled(IoBedOutline)`
-  width: 20px;
-  height: 20px;
-  vertical-align: baseline;
-
-  color: ${p => p.theme.colors.hText};
-`;
-
-export const Kitchen2 = styled(TbToolsKitchen2)`
-  width: 20px;
-  height: 20px;
-  color: ${p => p.theme.colors.hText};
-`;
 
 export const CamperCard = styled.div`
   max-width: 888px;
